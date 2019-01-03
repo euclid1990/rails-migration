@@ -1,4 +1,4 @@
-# How to use generate and migration outside of Rails.
+# How to use generator and migration outside of Rails.
 The following snippet provides a minimal example of how to use active record outside of Rails. Rails migrations (Standalone migrations) in non-Rails (and non Ruby) projects.
 
 ## Install
