@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'erb'
 require "active_record"
 require "rails/generators"
 
@@ -16,7 +17,7 @@ end
 
 DatabaseTasks.env = ENV['ENV'] || 'development'
 DatabaseTasks.root = File.dirname(__FILE__)
-DatabaseTasks.database_configuration = YAML.load_file('database.yml')
+DatabaseTasks.database_configuration = YAML.load(ERB.new(File.read('database.yml')).result)
 DatabaseTasks.db_dir = 'db'
 DatabaseTasks.migrations_paths= 'db/migrate'
 DatabaseTasks.seed_loader = SeedLoader.new('db/seeds.rb')
